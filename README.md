@@ -1,6 +1,6 @@
 # Celeris Robotics
 
-[🌐 **Visit the Website**](https://sdevsl.github.io/celerisrobotics-saharsh/main.html)
+[🌐 **Visit the Website**](https://sdevsl.github.io/celerisrobotics-saharsh/index.html)
 
 Official website for **Celeris Robotics**, an FTC robotics team.
 
