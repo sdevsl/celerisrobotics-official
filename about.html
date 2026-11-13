@@ -218,6 +218,75 @@
         line-height: 1.3;
     }
 
+    /* ----- one card size for every team (rows of 3 are centred) ----- */
+
+    /* let the grids respond to the width of the column they sit in,
+       not just the width of the window */
+    .team-section {
+        container-name: team;
+        container-type: inline-size;
+    }
+
+    /* narrow column: the CAD team's four members form a balanced 2 x 2 */
+    .team-members--four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* wide enough: every card is a quarter of the row, so the CAD team fills
+       its row and the 3-person teams sit centred at exactly the same size */
+    @media (min-width: 701px) {
+        @container team (min-width: 600px) {
+            .team-members {
+                grid-template-columns: repeat(3, calc((100% - 42px) / 4));
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .team-members--four {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .team-members .member {
+                border-radius: 12px;
+            }
+
+            .team-members .member-index {
+                top: 12px;
+                left: 12px;
+                padding: 5px 9px;
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+
+            .team-members .member-info {
+                padding: 16px 14px;
+            }
+
+            .team-members .member-info::before {
+                width: 22px;
+                margin-bottom: 10px;
+            }
+
+            .team-members .member:hover .member-info::before {
+                width: 44px;
+            }
+
+            .team-members .member-info h3 {
+                font-size: 17px;
+                margin-bottom: 6px;
+            }
+
+            .team-members .member-role {
+                font-size: 10px;
+                letter-spacing: 1.5px;
+            }
+
+            .team-members .member-sub {
+                font-size: 12px;
+            }
+        }
+    }
+
     /* ----- responsive ----- */
 
     @media (max-width: 1000px) {
@@ -680,7 +749,7 @@
     <section class="about-main">
         <div class="about-grid">
             <div class="about-heading">
-                <h2>Nine <span>Members.</span><br>Two <span>Coaches.</span><br>One <span>Robot.</span></h2>
+                <h2>Ten <span>Members.</span><br>Two <span>Coaches.</span><br>One <span>Robot.</span></h2>
 
                 <aside class="bio-panel" id="bio-panel" aria-live="polite">
                     <button class="bio-close" type="button" aria-label="Close">&times;</button>
@@ -746,7 +815,7 @@
                 <div class="section-titles">
                     <h2>CAD Team</h2>
                 </div>
-                <div class="team-members">
+                <div class="team-members team-members--four">
                     <article class="member" tabindex="0">
                         <div class="member-photo">
                             <img src="assets/images/Avyaan.png" alt="Avyaan Nischal">
@@ -787,6 +856,19 @@
                         <div class="member-bio" hidden>
                             <p>My name is Aadith Sayini, and I love to be active in a variety of extracurricular activities, including basketball, lacrosse, and more. I have not entered into many stem projects or competitions, but I have honed my engineering and cad skills through middle school, and hope to climb to greater heights going forward, through competitions such as ftc.</p>
                             <p>For Celeris Robotics, I bring not just 2 years of cad experience, but a love for engineering from primary school, where I was simply exercising my creativity, into middle school, where I learned how to apply this creativity and to think like an engineer through the engineering design circle. I hope to bring my experience and love for engineering this season!</p>
+                        </div>
+                    </article>
+                    <article class="member" tabindex="0">
+                        <div class="member-photo">
+                            <img src="assets/images/Jake.jpg" alt="Jake Wang">
+                        </div>
+                        <span class="member-index">04</span>
+                        <div class="member-info">
+                            <h3>Jake Wang</h3>
+                            <p class="member-role">CAD Modeler</p>
+                        </div>
+                        <div class="member-bio" hidden>
+                            <p>Hi! My name is Jake Wang, and I am a rising freshman at West Windsor-Plainsboro High School South. From a young age, I’ve always loved STEM-based activities, spending hours building imaginative structures with LEGOs. While I am newer to the FTC environment, I am eager to jump in, learn quickly, and give my all to the team. I’m excited to contribute my passion for engineering and my foundational CAD skills as we take on this season together!</p>
                         </div>
                     </article>
                 </div>
